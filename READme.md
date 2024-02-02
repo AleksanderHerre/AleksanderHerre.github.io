@@ -4,13 +4,13 @@
 
 Hei, og velkommen til mitt nettsted. Dette var laget som et skole prosjekt, jeg viste ikke helt hva jeg skulle lage så jeg bare komm opp med en nettside for fult av forskjellige ting. Du har Time-planen til klassen min 2ITB på Gand Vidergående Skole, framside, klikker spill, også coin flip inne i dette nettstedet. 
 
-# Hvorfor? 
+# Hvorfor? l
 
 Jeg valgte dette prosjektet for jeg tenkte det hørtes gøy ut og for eg ville lære meg meir og CSS og JavaScript of web-developement generelt. 
 
 # Lett og finne
 
-Nettsiden kan du finne via to veier, du kan finne den gjennom github sefølgeligt på "https://github.com/AleksanderHerre/AleksanderHerre.github.io" åsså metode nummer to du kan bruke driftstøtte delen og finne den på søkemotoren med og skrive1 "192.168.1.55" også etter gå innpå index mappen også index.html så er du inne. 
+Nettsiden kan du finne via to veier, du kan finne den gjennom github sefølgeligt på "https://githhttps://aleksanderherre.github.io/index/index.html" åsså metode nummer to du kan bruke driftstøtte delen og finne den på søkemotoren med og skrive1 "192.168.1.55" også etter gå innpå index mappen også index.html så er du inne. 
 
 # Språk
 
