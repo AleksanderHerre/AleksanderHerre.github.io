@@ -4,7 +4,7 @@
 
 Hei, og velkommen til mitt nettsted. Dette var laget som et skole prosjekt, jeg viste ikke helt hva jeg skulle lage så jeg bare komm opp med en nettside for fult av forskjellige ting. Du har Time-planen til klassen min 2ITB på Gand Vidergående Skole, framside, klikker spill, også coin flip inne i dette nettstedet. 
 
-# Hvorfor? l
+# Hvorfor? 
 
 Jeg valgte dette prosjektet for jeg tenkte det hørtes gøy ut og for eg ville lære meg meir og CSS og JavaScript of web-developement generelt. 
 
