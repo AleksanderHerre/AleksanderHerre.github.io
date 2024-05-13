@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
           });
   };
 
-  
-
   const topBarContainer = document.getElementById("topBarContainer");
   if (topBarContainer) {
       includeHTML("../menu/menu.html", topBarContainer);
