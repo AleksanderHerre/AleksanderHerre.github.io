@@ -6,15 +6,16 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <main>
-        <div>
-        <!-- Bakgrunns bilde -->
-        <img id="img" class="banner" src="login/Login.jpg" alt="">
-        </div>
-            <!-- Framside tekst -->
-            <h1 id="hei" class="hidden">Login</h1>
-    </main>
-
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error">Incorrect username/password combination.</div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Username or email">
+                <div class="form__input-error-message">This is an error message</div>
+            </div>
+        </form>
+    </div>
     <script src="../login/login.js"></script>
     <script src="launch.json"></script>
 </body>
