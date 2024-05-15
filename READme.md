@@ -10,7 +10,7 @@ Jeg valgte dette prosjektet for jeg tenkte det hørtes gøy ut og for eg ville l
 
 # Lett og finne
 
-Nettsiden kan du finne via to veier, du kan finne den gjennom github sefølgeligt på "https://githhttps://aleksanderherre.github.io/index/index.html" åsså metode nummer to du kan bruke driftstøtte delen og finne den på søkemotoren med og skrive1 "192.168.1.55" også etter gå innpå index mappen også index.html så er du inne. 
+Nettsiden kan du finne via to veier, du kan finne den gjennom github sefølgeligt på "https://githhttps://aleksanderherre.github.io/index.html" eller på mitt eget nettverk så blir det 192.168.25.19 åsså metode nummer to du kan bruke driftstøtte delen og finne den på søkemotoren med og skrive1 "192.168.1.55" også etter gå innpå index mappen også index.html så er du inne. 
 
 # Språk
 
@@ -18,7 +18,7 @@ I dette prosjektet har jeg brukt tre språk HTML, CSS og JavaScript tre hovudsak
 
 # Tid
 
-Jeg har brukt mye tid på og lese funksjoner og språk jeg ikke helt har forståt i fortid, sånt som jeg leste meg litt opp på JavaScript også letet jeg etter nye funksjoner i CSS. Html kunne jeg ifra før av så ble ikke mye av det, og er ikke så mye innhold i det. Der det ligger mest innhold er koden seg selv, HTML er egentligt bare oppsettet også er JavaScript og CSS det som holder det sammer og får ting til og gjøre ting. 
+Jeg har brukt mye tid på og lese funksjoner og språk jeg ikke helt har forståt i fortid, sånt som jeg leste meg litt opp på JavaScript også letet jeg etter nye funksjoner i CSS. Html kunne jeg ifra før av så ble ikke mye av det, og er ikke så mye innhold i det. Der det ligger mest innhold er koden seg selv, HTML er egentligt bare oppsettet også er JavaScript og CSS det som holder det sammer og får ting til og gjøre ting. Jeg har brukt PHP for dette prosjektet for og koble til MYSQL og HTML. 
 
 Jeg har også brukt tid på og lage en server som hoster nettsiden på Gand Vidergående Skole (2ITB) sitt nettverk. Jeg lagte en Ubuntu server i ProxMox og brukte apache2 inne i Ubuntu serveren til og hoste nettsiden på vell nettet. 
 
