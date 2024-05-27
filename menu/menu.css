@@ -1,0 +1,27 @@
+/* TopBar stilen, plassering og utsene*/
+#topBarContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid black;
+    background-color: white;
+
+.w3-padding.w3-xlarge a i {
+    font-size: 34px;
+    vertical-align: middle; 
+    margin-right: -10px;
+    font-weight: bold; 
+}
+
+/* Icon størelse */
+#home {
+    font-size: 36px;
+    user-select: none;
+}
+
+/* Icon størelse */
+#iconTa {
+    margin-left: 15px;
+    user-select: none;
+}}
