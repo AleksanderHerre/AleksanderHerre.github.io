@@ -1,4 +1,5 @@
 <?php
+
 // Definerer database informasjonen.
 $database = "LoginSystem";
 $servername = "localhost";
@@ -21,20 +22,37 @@ $mail = $conn->real_escape_string($_POST['mail']);
 $username = $conn->real_escape_string($_POST['username']);
 $password = $conn->real_escape_string($_POST['password']);
 
-// Lager en SQL setning som settes inn som brukerdata i databasen 
-$sql = "INSERT INTO user (EmailAdress, Username, Password) VALUES ('$mail', '$username', '$password');";
+function createUser($mail)
+{
+	$sql = "SELECT * FROM LoginSystem WHERE EmailAdress ='$mail'";
+	$result = mysql_query ( $sql ) ;
+	
+	if( mysql_num_rows( $result ) > 0 )
+	{
+		die( "Dette er allerede en eksisterende mail" )	;	
+	} else {
+		// Lager en SQL setning som settes inn som brukerdata i databasen 
+		$sql = "INSERT INTO user (EmailAdress, Username, Password) VALUES ('$mail', '$username', '$password');";
 
 
-// Utfører SQL-setning  og gir tilbakemelding 
-if ($conn->query($sql) === TRUE){
-	echo " it went well ";
-} else { 
-	echo "error:" . $sql. "<br>" .$conn->error;
+		// Utfører SQL-setning  og gir tilbakemelding 
+		if ($conn->query($sql) === TRUE){
+			echo " it went well ";
+		} else { 
+			echo "error:" . $sql. "<br>" .$conn->error;
+		}
+	}
+
 }
+
+createUser($mail);
+
 // tester om alt funker
 echo "test";
-$conn->close();
 //sender deg automatisk til framsiden etter sign up 
 ("Location: ../mainpage/mainpage.html");
+
+$conn->close();
+
 
 ?>
