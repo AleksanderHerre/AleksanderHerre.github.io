@@ -29,11 +29,11 @@ $MailResult =  $conn->query($MailCheck);
 $UsernameCheck = "SELECT Username FROM user WHERE Username ='$username'";
 $UsernameResult =  $conn->query($UsernameCheck);
 	
-if ($UsernameResult && $MailResult ->num_rows != 0){
+if ($UsernameResult->num_rows != 0 and $MailResult ->num_rows != 0){
 	die ( "Brukernavn og Mail er allerede i bruk!") ;
 }elseif($MailResult->num_rows != 0){
 	die( "Dette er allerede en eksisterende mail" )	;	
-} elseif ($UsernameResult-> num_rows != 0){
+} elseif ($UsernameResult-> num_rows != 0)
 	die( "Dette brukernavnet er allerede i bruk") ;
  else {
 	// Lager en SQL setning som settes inn som brukerdata i databasen 
@@ -45,12 +45,11 @@ if ($UsernameResult && $MailResult ->num_rows != 0){
 	} else { 
 		echo "error:" . $sql. "<br>" .$conn->error;
 	}
+	("Location: ../mainpage/mainpage.html");
 }
 
 // tester om alt funker
 echo "test";
-//sender deg automatisk til framsiden etter sign up 
-("Location: ../mainpage/mainpage.html");
 
 $conn->close();
 
