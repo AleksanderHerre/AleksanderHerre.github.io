@@ -12,8 +12,8 @@ $conn = new mysqli($servername, $username, $password, $database);
 
 // Denne funksjonen sjekker om koblingen feilet og hvis ikke "good"	
 if ($conn->connect_error)
-{
-	die("Connection falure: " . $conn->connect_error);
+{	//hvis tilkoblingen mislykkes, vis feilmelding og avslutt
+	die("Connection failed: " . $conn->connect_error);
 }
 echo "Good";
 
