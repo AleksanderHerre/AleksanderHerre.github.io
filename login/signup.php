@@ -22,7 +22,12 @@ $mail = $conn->real_escape_string($_POST['mail']);
 $username = $conn->real_escape_string($_POST['username']);
 $password = $conn->real_escape_string($_POST['password']);
 
-
+// Password validation using PHP
+$passwordPattern = '/^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})/';
+if (!preg_match($passwordPattern, $password)) {
+    die("Passordet må være lengre enn 3 tegn og inneholde minst en stor bokstav og spesiell karakter.");
+}
+echo " good job ";
 $MailCheck = "SELECT EmailAdress FROM user WHERE EmailAdress ='$mail'";
 $MailResult =  $conn->query($MailCheck);
 
