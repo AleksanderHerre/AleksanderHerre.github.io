@@ -16,6 +16,22 @@ function clearInputError(inputElement) {
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
 
+// Sjekker om passordet følger reglamange 
+function password_valid() {
+    const createAccountForm = document.querySelector("#createAccount");
+    const passwordInput = createAccountForm.querySelector("input[name='password']");
+    const password = passwordInput.value;
+
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})/;
+    if (!passwordPattern.test(password)) {
+        setInputError(passwordInput, "Passordet må være lengre enn 3 tegn og må inneholde minst én stor bokstav og én spesiell karakter.");
+        return false; // Return false if validation fails
+    } else {
+        clearInputError(passwordInput);
+        return true; // Return true if validation passes
+    }    
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
@@ -54,15 +70,17 @@ document.addEventListener("DOMContentLoaded", () => {
     
     });
 
-function password_valid() {
-    const createAccountForm = document.querySelector("#createAccount");
-    const passwordInput = createAccountForm.querySelector("input[name='password']");
-    const password = passwordInput.value;
-   
-    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})/;
-    if (!passwordPattern.test(password)) {
-        setInputError(passwordInput, "Passordet må være lengre enn 3 tegn og må inneholde minst én stor bokstav og én spesiell karakter.");
-    } else {
-        createAccountForm.submit();
-    }    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const createAccountForm = document.querySelector("#createAccount");
+    
+        createAccountForm.addEventListener("submit", e => {
+            e.preventDefault();
+            // Validate password before submitting the form
+            if (password_valid()) {
+                // If validation passes, submit the form
+                createAccountForm.submit();
+            }
+        });
+    });
 });
