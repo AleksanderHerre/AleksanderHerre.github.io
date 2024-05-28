@@ -22,11 +22,19 @@ $mail = $conn->real_escape_string($_POST['mail']);
 $username = $conn->real_escape_string($_POST['username']);
 $password = $conn->real_escape_string($_POST['password']);
 
-// Password validation using PHP
-$passwordPattern = '/^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})/';
-if (!preg_match($passwordPattern, $password)) {
-    die("Passordet må være lengre enn 3 tegn og inneholde minst en stor bokstav og spesiell karakter.");
-}
+<script type="text/javascript">
+document.write('<script type=text/javascript" src="login.js"></script>')
+document.addEventListener("DOMContentLoaded", () => {
+	const createAccountForm = document.querySelector("#createAccount");
+
+	createAccountForm.addEventListener("submit", e => {
+		e.preventDefault();
+		password_valid();
+	});
+});
+
+</script>
+
 echo " good job ";
 $MailCheck = "SELECT EmailAdress FROM user WHERE EmailAdress ='$mail'";
 $MailResult =  $conn->query($MailCheck);
