@@ -29,15 +29,12 @@ $MailResult =  $conn->query($MailCheck);
 $UsernameCheck = "SELECT Username FROM user WHERE Username ='$username'";
 $UsernameResult =  $conn->query($UsernameCheck);
 	
-if($MailResult->num_rows != 0){
+if ($UsernameResult && $MailResult ->num_rows != 0){
+	die ( "Brukernavn og Mail er allerede i bruk!") ;
+}elseif($MailResult->num_rows != 0){
 	die( "Dette er allerede en eksisterende mail" )	;	
-
 } elseif ($UsernameResult-> num_rows != 0){
 	die( "Dette brukernavnet er allerede i bruk") ;
-
-} elseif ($UsernameResult && $MailResult ->num_rows != 0){
-	die ( "Brukernavn og Mail er allerede i bruk!")
-}
  else {
 	// Lager en SQL setning som settes inn som brukerdata i databasen 
 	$sql = "INSERT INTO user (EmailAdress, Username, Password) VALUES ('$mail', '$username', '$password');";
