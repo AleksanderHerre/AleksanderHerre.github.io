@@ -9,17 +9,16 @@ $password = "passord";
 
 // Connect to the database
 $conn = new mysqli($servername, $username, $password, $database);
+echo"connected "
+
 
 // Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Function to log in the user
-function loginUser($conn, $username or $mail, $password) {
 
-}
- 
+echo " test" 
 
 $conn->close();
 ?>
