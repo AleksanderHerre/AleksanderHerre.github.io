@@ -27,12 +27,12 @@ $MailCheck = "SELECT EmailAdress FROM user WHERE EmailAdress ='$mail'";
 $MailResult =  $conn->query($MailCheck);
 
 $UsernameCheck = "SELECT Username FROM user WHERE Username ='$username'";
-$usernameResult =  $conn->query($UsernameCheck);
+$UsernameResult =  $conn->query($UsernameCheck);
 	
 if($MailResult->num_rows != 0){
 	die( "Dette er allerede en eksisterende mail" )	;	
 
-} elseif ($usernameResult-> num_rows != 0){
+} elseif ($UsernameResult-> num_rows != 0){
 	die( "Dette brukernavnet er allerede i bruk") ;
 }
  else {
