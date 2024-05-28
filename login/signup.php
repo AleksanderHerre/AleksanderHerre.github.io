@@ -22,32 +22,32 @@ $mail = $conn->real_escape_string($_POST['mail']);
 $username = $conn->real_escape_string($_POST['username']);
 $password = $conn->real_escape_string($_POST['password']);
 
-function createUser($mail)
-{
-	$sql = "SELECT * FROM LoginSystem WHERE EmailAdress ='$mail'";
-	$result = mysql_query ( $sql ) ;
+
+$MailCheck = "SELECT EmailAdress FROM user WHERE EmailAdress ='$mail'";
+$MailResult =  $conn->query($MailCheck);
+
+$UsernameCheck = "SELECT Username FROM user WHERE Username ='$username'";
+$usernameResult =  $conn->query($UsernameCheck);
 	
-	if( mysql_num_rows( $result ) > 0 )
-	{
-		die( "Dette er allerede en eksisterende mail" )	;	
-	} else {
-		// Lager en SQL setning som settes inn som brukerdata i databasen 
-		$sql = "INSERT INTO user (EmailAdress, Username, Password) VALUES ('$mail', '$username', '$password');";
+if($MailResult->num_rows != 0){
+	die( "Dette er allerede en eksisterende mail" )	;	
 
-
-		// Utfører SQL-setning  og gir tilbakemelding 
-		if ($conn->query($sql) === TRUE){
-			echo " it went well ";
-		} else { 
-			echo "error:" . $sql. "<br>" .$conn->error;
-		}
+} elseif ($usernameResult-> num_rows != 0){
+	die( "Dette brukernavnet er allerede i bruk") ;
+}
+ else {
+	// Lager en SQL setning som settes inn som brukerdata i databasen 
+	$sql = "INSERT INTO user (EmailAdress, Username, Password) VALUES ('$mail', '$username', '$password');";
+          
+	// Utfører SQL-setning  og gir tilbakemelding 
+	if ($conn->query($sql) === TRUE){
+		echo " it went well ";
+	} else { 
+		echo "error:" . $sql. "<br>" .$conn->error;
 	}
-
 }
 
-createUser($mail);
-
-// tester om alt funker
+/	/ tester om alt funker
 echo "test";
 //sender deg automatisk til framsiden etter sign up 
 ("Location: ../mainpage/mainpage.html");
