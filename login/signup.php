@@ -34,6 +34,9 @@ if($MailResult->num_rows != 0){
 
 } elseif ($UsernameResult-> num_rows != 0){
 	die( "Dette brukernavnet er allerede i bruk") ;
+
+} elseif ($UsernameResult && $MailResult ->num_rows != 0){
+	die ( "Brukernavn og Mail er allerede i bruk!")
 }
  else {
 	// Lager en SQL setning som settes inn som brukerdata i databasen 
