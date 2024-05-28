@@ -47,7 +47,7 @@ if($MailResult->num_rows != 0){
 	}
 }
 
-/	/ tester om alt funker
+// tester om alt funker
 echo "test";
 //sender deg automatisk til framsiden etter sign up 
 ("Location: ../mainpage/mainpage.html");
