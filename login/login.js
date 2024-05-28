@@ -48,17 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form--hidden");
     });
 
-    loginForm.addEventListener("submit", e => {
-        e.preventDefault();
-
-        // Perform your AJAX/Fetch login
-
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
-    });
-
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
-		// Denne delen av koden advarer deg mmot og ha  mindre en 3 karakterer i brukernavnet ditt
+		// Denne delen av koden advarer deg mot og ha  mindre en 3 karakterer i brukernavnet ditt
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 3) {
                 setInputError(inputElement, "Username should be more than 3 characters in length");
             }

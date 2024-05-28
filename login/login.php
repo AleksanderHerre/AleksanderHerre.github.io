@@ -17,7 +17,7 @@ if ($conn->connect_error)
 	die("Connection failed: " . $conn->connect_error);
 }
 //hvis tilkobling vellykket, vis suksessmelding
-echo "Connected successfully";
+echo "Fullført";
 
 $mail = $_POST['mailInput'] ?? null;
 $username = $_POST['usernameInput'] ?? null;
