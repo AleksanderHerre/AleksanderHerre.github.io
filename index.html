@@ -20,11 +20,11 @@
 
 		<!-- Autofocus placeholder gjør som når du går inn på en nettside slipper du og trykke på input baren for og skrive og går heller... 
 		 bare til input baren med en gang du kommer inn til nesttstedet. Dette gjør det kjappere og mer accessible --> 
-                <input type="text" class="form__input" autofocus placeholder="Username or email">
+                <input type="text" class="form__input" autofocus placeholder="Username or email" name="UserOrEmail">
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password">
+                <input type="password" class="form__input" autofocus placeholder="Password" name="LoginPassword">
                 <div class="form__input-error-message"></div>
             </div>
             <button class="form__button" type="submit">Continue</button>
@@ -32,7 +32,7 @@
                 <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
             </p>
         </form>
-        
+
         <!-- Lager et form som inneholder SignUp både forms sånt som Login og SignUp er på samme side bare gjemt bak hverandre. Dette gjør det fortere og mer rensligt ut. -->
 
         <form class="form form--hidden" id="createAccount" method="post" action="/login/signup.php">
@@ -47,9 +47,13 @@
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password" name="password">
+                <input type="password" id="password" class="form__input" autofocus placeholder="Password" name="password">
                 <div class="form__input-error-message"></div>
             </div>
+            <!--CheckBox-->
+            <input type="checkbox" id="SignCheckPass" />
+            <label for ="SignCheckPass">Show Password</label>
+            <!--Continue Button-->
             <button class="form__button" type="submit">Continue</button>
             <p class="form__text">
                 <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>

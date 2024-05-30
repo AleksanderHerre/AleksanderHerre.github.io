@@ -88,4 +88,14 @@ document.addEventListener("DOMContentLoaded", () => {
             createAccountForm.submit();
         }
     });
+    
+    document.getElementById('SignCheckPass').onclick = function() {
+        if (this.checked) { 
+            document.getElementById('password').type = "text";
+            } else {
+            document.getElementById('password').type = "password";
+        }
+    };
+
+
 });
