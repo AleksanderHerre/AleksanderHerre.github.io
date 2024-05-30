@@ -81,9 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const passwordInput = createAccountForm.querySelector("input[name='password']");
         const password = passwordInput.value;
 
-        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})/;
+        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
         if (!passwordPattern.test(password)) {
-            setInputError(passwordInput, "Passordet må være lenger en 3 karakterer og må inneholde minst en stor bokstav og spesiell karakter.");
+            setInputError(passwordInput, "Passordet skal inneholde flere en 7 karakterer og skal inneholde minst en stor bokstav og spesiell karakter.");
         } else {
             createAccountForm.submit();
         }
