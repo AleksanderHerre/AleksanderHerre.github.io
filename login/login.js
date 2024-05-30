@@ -89,13 +89,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
     
-    document.getElementById('SignCheckPass').onclick = function() {
+    document.getElementById('LoginCheckPass').onclick = function() {
         if (this.checked) { 
-            document.getElementById('password').type = "text";
+            document.getElementById('loginpassword').type = "text";
             } else {
-            document.getElementById('password').type = "password";
+            document.getElementById('loginpassword').type = "password";
         }
     };
 
-
+    // Password Checker, login and signup 
+    document.getElementById('SignCheckPass').onclick = function() {
+        if (this.checked) { 
+            document.getElementById('signuppassword').type = "text";
+            } else {
+            document.getElementById('signuppassword').type = "password";
+        }
+    };
 });
