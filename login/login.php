@@ -21,7 +21,7 @@ echo " test";
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
 
-$LoginEmailorUser = "SELECT EmailAdress, Username FROM user WHERE EmailAdress or Username = '$UserOrEmail'"
-echo "woho!"
+$LoginEmailorUser = "SELECT EmailAdress, Username FROM user WHERE EmailAdress or Username = '$UserOrEmail'";
+echo "woho!";
 $conn->close();
 ?>
