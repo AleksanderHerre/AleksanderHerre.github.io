@@ -9,16 +9,19 @@ $password = "passord";
 
 // Connect to the database
 $conn = new mysqli($servername, $username, $password, $database);
-echo"connected "
+echo"connected ";
 
 
 // Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+echo " test";
 
+$UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
+$LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
 
-echo " test" 
-
+$LoginEmailorUser = "SELECT EmailAdress, Username FROM user WHERE EmailAdress or Username = '$UserOrEmail'"
+echo "woho!"
 $conn->close();
 ?>
