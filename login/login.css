@@ -48,7 +48,7 @@ input[type=checkbox]{
     cursor: pointer;
 }
 
-#SignCheckPass:hover {
+#SignCheckPass:hover & #LoginCheckPass:hover{
     transform: scale(0.95);
 }
 
