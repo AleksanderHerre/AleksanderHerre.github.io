@@ -29,6 +29,9 @@ $MailResult =  $conn->query($MailCheck);
 $UsernameCheck = "SELECT Username FROM user WHERE Username ='$username'";
 $UsernameResult =  $conn->query($UsernameCheck);
 	
+// $UsernameResult ser i num_rows i database om det ligger informasjon om et eksisterende brukernavn. 
+// Hvis den finner resultat som er matchende så blir det en 1 og hvis ikke 0. 
+// Denne prosessen blir også gjort med $MailResult.
 if ($UsernameResult->num_rows != 0 and $MailResult ->num_rows != 0){
 	die ( "Brukernavn og Mail er allerede i bruk!") ;
 }elseif($MailResult->num_rows != 0){

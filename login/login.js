@@ -22,9 +22,9 @@ function password_valid() {
     const passwordInput = createAccountForm.querySelector("input[name='password']");
     const password = passwordInput.value;
 
-    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})/;
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{7,})/;
     if (!passwordPattern.test(password)) {
-        setInputError(passwordInput, "Passordet må være lengre enn 3 tegn og må inneholde minst én stor bokstav og én spesiell karakter.");
+        setInputError(passwordInput, "Passordet må være lengre enn 6 tegn og må inneholde minst én stor bokstav og én spesiell karakter.");
         return false; // Return false if validation fails
     } else {
         clearInputError(passwordInput);
@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     
     });
-
 
     document.addEventListener("DOMContentLoaded", () => {
         const createAccountForm = document.querySelector("#createAccount");
