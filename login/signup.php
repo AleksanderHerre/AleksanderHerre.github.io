@@ -48,7 +48,6 @@ if ($UsernameResult->num_rows != 0 and $MailResult ->num_rows != 0){
 	} else { 
 		echo "error:" . $sql. "<br>" .$conn->error;
 	}
-	("Location: ../mainpage/mainpage.html");
 }
 
 // tester om alt funker

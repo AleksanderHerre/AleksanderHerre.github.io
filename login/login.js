@@ -22,9 +22,9 @@ function password_valid() {
     const passwordInput = createAccountForm.querySelector("input[name='password']");
     const password = passwordInput.value;
 
-    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{7,})/;
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})/;
     if (!passwordPattern.test(password)) {
-        setInputError(passwordInput, "Passordet må være lengre enn 6 tegn og må inneholde minst én stor bokstav og én spesiell karakter.");
+        setInputError(passwordInput, "Passordet må være lengre enn 3 tegn og må inneholde minst én stor bokstav og én spesiell karakter.");
         return false; // Return false if validation fails
     } else {
         clearInputError(passwordInput);
@@ -71,7 +71,21 @@ document.addEventListener("DOMContentLoaded", () => {
             if (password_valid()) {
                 // If validation passes, submit the form
                 createAccountForm.submit();
+
             }
         });
+    });
+
+    createAccountForm.addEventListener("submit", e => {
+        e.preventDefault();
+        const passwordInput = createAccountForm.querySelector("input[name='password']");
+        const password = passwordInput.value;
+
+        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})/;
+        if (!passwordPattern.test(password)) {
+            setInputError(passwordInput, "Passordet må være lenger en 3 karakterer og må inneholde minst en stor bokstav og spesiell karakter.");
+        } else {
+            createAccountForm.submit();
+        }
     });
 });
