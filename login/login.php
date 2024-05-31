@@ -16,13 +16,13 @@ echo"connected ";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo " test ";
+echo " test";
 
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
 
-$LoginEmailorUser = "SELECT EmailAdress, Username FROM user WHERE EmailAdress or Username = '$UserOrEmail'";
-
-echo "woho!";
+$LoginEmailOrUser = "SELECT EmailAdress, Username FROM user WHERE EmailAdress = '$UserOrEmail' OR Username = '$UserOrEmail'";
+$LoginCheckPassword = "SELECT Password FROM user WHERE Password = '$LoginPassword'";
+echo "woho!"
 $conn->close();
 ?>
