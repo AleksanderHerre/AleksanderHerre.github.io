@@ -15,14 +15,12 @@ if ($conn->connect_error)
 {	//hvis tilkoblingen mislykkes, vis feilmelding og avslutt
 	die("Connection failed: " . $conn->connect_error);
 }
-echo "Good";
 
 // Henter brukerdata fra et skjema ved hjelp av POST-metoden  og sikrer mot SQL - injeksjoner
 $mail = $conn->real_escape_string($_POST['mail']);
 $username = $conn->real_escape_string($_POST['username']);
 $password = $conn->real_escape_string($_POST['password']);
 
-echo " good job ";
 $MailCheck = "SELECT EmailAdress FROM user WHERE EmailAdress ='$mail'";
 $MailResult =  $conn->query($MailCheck);
 
@@ -48,10 +46,9 @@ if ($UsernameResult->num_rows != 0 and $MailResult ->num_rows != 0){
 	} else { 
 		echo "error:" . $sql. "<br>" .$conn->error;
 	}
-}
+}¨
 
-// tester om alt funker
-echo "test";
+echo".";
 
 $conn->close();
 
