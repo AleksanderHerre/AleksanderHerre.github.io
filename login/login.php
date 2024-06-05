@@ -39,15 +39,7 @@ if ($uResult->num_rows == 0) {
 
 echo "2";
 
-$LoginCheckPassword = "SELECT Password FROM user WHERE Password = ?";
-echo"2.2";
-$stmt = $conn->prepare($LoginCheckPassword);
-echo"2.3";
-$stmt->bind_param("s", $LoginPassword);
-echo"2.4";
-$stmt->execute();
-echo"2.5";
-$result = $stmt->get_result();
+$LoginCheckPassword = "SELECT Password FROM user WHERE Password = '$LoginPassword'";
 
 echo "3";
 
