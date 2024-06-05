@@ -15,7 +15,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-echo"1";
+echo "1";
 
 // Retrieve and sanitize user input
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
@@ -27,12 +27,17 @@ $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
 $uResult = $uStmt->get_result();
 
-if($uResult->num_rows == 0){
+if ($uResult === false) {
+    echo "Error: " . $conn->error; // Print any error message
+    exit;
+}
+
+if ($uResult->num_rows == 0) {
     header("Location: ../index.html"); // Redirect to index.html
     exit;
 }
-echo"2";
 
+echo "2";
 
 $LoginCheckPassword = "SELECT Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $stmt = $conn->prepare($LoginCheckPassword);
@@ -40,15 +45,22 @@ $stmt->bind_param("s", $UserOrEmail);
 $stmt->execute();
 $result = $stmt->get_result();
 
+if ($result === false) {
+    echo "Error: " . $conn->error; // Print any error message
+    exit;
+}
+
+echo "3";
+
 $user = $result->fetch_assoc();
-if(!$user || !password_verify($LoginPassword, $user['Password'])){
+if (!$user || !password_verify($LoginPassword, $user['Password'])) {
     header("Location: ../index.html"); // Redirect to index.html
     exit;
 }
-echo"3";
 
+echo "4";
 
 // Successful login
 header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
 exit;
-?> 
+?>
