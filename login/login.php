@@ -40,6 +40,7 @@ if ($uResult->num_rows == 0) {
 echo "2";
 
 $LoginCheckPassword = "SELECT Password FROM user WHERE Password = ?";
+echo"2.5";
 $stmt = $conn->prepare($LoginCheckPassword);
 $stmt->bind_param("s", $LoginPassword);
 $stmt->execute();
