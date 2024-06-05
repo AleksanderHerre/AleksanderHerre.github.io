@@ -39,7 +39,7 @@ if ($uResult->num_rows == 0) {
 
 echo "2";
 
-$LoginCheckPassword = "SELECT Password FROM user WHERE EmailAdress = ? OR Username = ?";
+$LoginCheckPassword = "SELECT Password FROM user WHERE Password = ?";
 $stmt = $conn->prepare($LoginCheckPassword);
 $stmt->bind_param("s", $LoginPassword);
 $stmt->execute();
