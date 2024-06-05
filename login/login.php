@@ -40,7 +40,7 @@ if ($uResult->num_rows == 0) {
 echo "2";
 
 $LoginCheckPassword = "SELECT Password FROM user WHERE Password = '$LoginPassword'";
-$pStmt = $conn->prepare($LoginEmailOrUser);
+$pStmt = $conn->prepare($LoginCheckPassword);
 $pResult = $pStmt->get_result();
 echo "3";
 
