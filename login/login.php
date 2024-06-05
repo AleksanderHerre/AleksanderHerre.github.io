@@ -15,6 +15,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+echo"1";
+
 // Retrieve and sanitize user input
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
@@ -29,6 +31,8 @@ if($uResult->num_rows == 0){
     header("Location: ../index.html"); // Redirect to index.html
     exit;
 }
+echo"2";
+
 
 $LoginCheckPassword = "SELECT Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $stmt = $conn->prepare($LoginCheckPassword);
@@ -41,6 +45,8 @@ if(!$user || !password_verify($LoginPassword, $user['Password'])){
     header("Location: ../index.html"); // Redirect to index.html
     exit;
 }
+echo"3";
+
 
 // Successful login
 header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
