@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start();    
 
 // Database connection details
 $database = "LoginSystem";
@@ -41,14 +41,9 @@ echo "2";
 
 $LoginCheckPassword = "SELECT Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $stmt = $conn->prepare($LoginCheckPassword);
-$stmt->bind_param("s", $UserOrEmail);
+$stmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $stmt->execute();
 $result = $stmt->get_result();
-
-if ($result === false) {
-    echo "Error: " . $conn->error; // Print any error message
-    exit;
-}
 
 echo "3";
 
