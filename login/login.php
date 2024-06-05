@@ -39,9 +39,9 @@ if ($uResult->num_rows == 0) {
 
 echo "2";
 
-$LoginCheckPassword = "SELECT Password FROM user WHERE EmailAdress = '$UserOrEmail' OR Username = '$UserOrEmail'";
+$LoginCheckPassword = "SELECT Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $stmt = $conn->prepare($LoginCheckPassword);
-$stmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
+$stmt->bind_param("s", $LoginPassword);
 $stmt->execute();
 $result = $stmt->get_result();
 
