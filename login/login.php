@@ -40,10 +40,11 @@ if ($uResult->num_rows == 0) {
 echo "2";
 
 $LoginCheckPassword = "SELECT Password FROM user WHERE Password = '$LoginPassword'";
-
+$pStmt = $conn->prepare($LoginEmailOrUser);
+$pResult = $pStmt->get_result();
 echo "3";
 
-$user = $result->fetch_assoc();
+$user = $pResult->fetch_assoc();
 if (!$user || !password_verify($LoginPassword, $user['Password'])) {
     header("Location: ../index.html"); // Redirect to index.html
     exit;
