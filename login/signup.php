@@ -46,9 +46,12 @@ if ($UsernameResult->num_rows != 0 and $MailResult ->num_rows != 0){
 	} else { 
 		echo "error:" . $sql. "<br>" .$conn->error;
 	}
-}¨
+}
 
 echo".";
+// Successful login
+header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
+exit;
 
 $conn->close();
 
