@@ -21,32 +21,19 @@ echo "1";
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
 
-$LoginEmailOrUser = "SELECT EmailAdress, Username, Password FROM user WHERE EmailAdress = ? OR Username = ?";
+$LoginEmailOrUser = "SELECT EmailAdress, Username FROM user WHERE EmailAdress = ? OR Username = ?";
 $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
 $uResult = $uStmt->get_result();
 
-if ($uResult === false) {
-    echo "Error: " . $conn->error; // Print any error message
-    exit;
-}
-
-if ($uResult->num_rows == 0) {
-    header("Location: ../index.html"); // Redirect to index.html
-    exit;
-}
-
-echo "2";
-
 $LoginCheckPassword = "SELECT Password FROM user WHERE Password = ? ";
 echo"2.5";
 $pStmt = $conn->prepare($LoginCheckPassword);
 echo"2.6";
-$pStmt->bind_param("s", $LoginPassword);
-echo"2.7";
+$uStmt->bind_param("s", $LoginPassword);
 $pStmt->execute();
-echo"2.8";
+echo"2.7";
 $pResult = $pStmt->get_result();
 echo "3";
 
