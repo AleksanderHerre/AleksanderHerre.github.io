@@ -20,7 +20,7 @@ echo "1";
 // Retrieve and sanitize user input
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
-
+echo"hei";
 $LoginEmailOrUser = "SELECT EmailAdress, Username, Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
