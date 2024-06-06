@@ -20,25 +20,34 @@ echo "1";
 // Retrieve and sanitize user input
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
-echo"hei";
+echo "hei";
+
 $LoginEmailOrUser = "SELECT EmailAdress, Username, Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
 $uResult = $uStmt->get_result();
 
-echo"test";
+echo "test";
 
 $user = $uResult->fetch_assoc();
-echo"noodle";
+
+echo "noodle";
 if (!$user || !password_verify($LoginPassword, $user['Password'])) {
-    echo"fuck u"; // Redirect to index.html
+    echo "fuck u"; // Redirect to index.html
     exit;
 }
 
 echo "4";
 
+// Check if input matches database values
+if ($UserOrEmail !== $user['EmailAdress'] && $UserOrEmail !== $user['Username']) {
+    echo "Email or username does not match"; // Redirect or handle error
+    exit;
+}
+
 // Successful login
 header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
 exit;
+
 ?>
