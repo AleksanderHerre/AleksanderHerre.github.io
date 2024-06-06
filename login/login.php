@@ -41,9 +41,7 @@ echo "2";
 
 $LoginCheckPassword = "SELECT Password FROM user WHERE Password = '$LoginPassword' ";
 echo"2.5";
-$pStmt = $conn->prepare($LoginCheckPassword);
-echo"2.6"; 
-$pResult = $pStmt->get_result();
+$pResult = $conn->query($LoginCheckPassword)
 echo "3";
 
 $user = $pResult->fetch_assoc();
