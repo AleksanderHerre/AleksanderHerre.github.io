@@ -32,19 +32,19 @@ echo "test";
 
 $user = $uResult->fetch_assoc();
 
-echo "noodle";
-if (!$user || !password_verify($LoginPassword, $user['Password'])) {
-    echo "fuck u"; // Redirect to index.html
-    exit;
-}
-
-echo "4";
-
 // Check if input matches database values
 if ($UserOrEmail !== $user['EmailAdress'] && $UserOrEmail !== $user['Username']) {
     echo "Email or username does not match"; // Redirect or handle error
     exit;
 }
+
+echo "noodle";
+if (!$user || !password_verify($LoginPassword, $user['Password'])) {
+    echo "fuck u"; // Redirect to index.html
+}
+
+echo "4";
+ 
 
 // Successful login
 header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
