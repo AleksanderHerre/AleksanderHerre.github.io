@@ -27,10 +27,12 @@ $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
 $uResult = $uStmt->get_result();
 
+echo"test";
 
 $user = $uResult->fetch_assoc();
+echo"noodle";
 if (!$user || !password_verify($LoginPassword, $user['Password'])) {
-    header("Location: ../index.html"); // Redirect to index.html
+    echo"fuck u"; // Redirect to index.html
     exit;
 }
 
