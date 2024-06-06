@@ -38,9 +38,9 @@ if ($UserOrEmail !== $user['EmailAdress'] && $UserOrEmail !== $user['Username'])
     exit;
 }
 
-echo "noodle";
-if (!$user || !password_verify($LoginPassword, $user['Password'])) {
-    echo "fuck u"; // Redirect to index.html
+if ($LoginPassword !== $user['Password']) {
+    echo "Password does not match the user"; // Redirect or handle error
+    exit;
 }
 
 echo "4";
