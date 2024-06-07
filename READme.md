@@ -10,11 +10,11 @@ Jeg valgte dette prosjektet for jeg tenkte det hørtes gøy ut og for eg ville l
 
 # Lett og finne
 
-Nettsiden kan du finne via to veier, du kan finne den gjennom github sefølgeligt på "https://githhttps://aleksanderherre.github.io/index/index.html" åsså metode nummer to du kan bruke driftstøtte delen og finne den på søkemotoren med og skrive1 "192.168.1.55" også etter gå innpå index mappen også index.html så er du inne. 
+Nettsiden kan du finne via to veier, du kan finne den gjennom github sefølgeligt på "https://githhttps://aleksanderherre.github.io/index/index.html" dette er derimot en måte og ikke få en bruker på dersom min nettside er hovudsakelig kun! for bruk av mitt nettverk og mitt private som blir min vmbr25 som er et segramenta nettverk inne på ProxMox som tilhører meg. Er du inne på VMBR25 så kan du gå inn på 192.168.25.19 for og finne tilgang til denne nettsiden.
 
 # Språk
 
-I dette prosjektet har jeg brukt tre språk HTML, CSS og JavaScript tre hovudsakelige språk for og lage nettside. Disse språkene blir oftest brukt til dette, men de kan også bli brukt til andre ting. Men hovudsakeligt de tingene. 
+I dette prosjektet har jeg brukt tre språk HTML, CSS og JavaScript tre hovudsakelige språk for og lage nettside. Men nettsiden min inneholder også SQL og PHP som er viktige språk for funksjoner med databaser og diverse. Disse språkene blir oftest brukt til laging av nettsider. Men de kan også bli brukt til andre ting. Men hovudsakeligt de tingene. 
 
 # Tid
 
@@ -24,7 +24,7 @@ Jeg har også brukt tid på og lage en server som hoster nettsiden på Gand Vide
 
 # Vanskelighet
 
-Jeg syntes dette var litt vanskelig var mye nytt og lære seg, i både CSS og JavaScript jeg har lest en del og funnet en del ting på nettet på google, github, stackoverflow også reddit. Det har hjulpet mye med og løsne mange av de problemene jeg har hatt underveis. 
+Jeg syntes dette var litt vanskelig var mye nytt og lære seg, i både PHP og JavaScript jeg har lest en del og funnet en del ting på nettet på google, github, stackoverflow også reddit. Det har hjulpet mye med og løsne mange av de problemene jeg har hatt underveis. 
 
 
     
