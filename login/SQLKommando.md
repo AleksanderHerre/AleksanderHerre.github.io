@@ -25,5 +25,3 @@ viewing database description :
 DESCRIBE (table);
 Example: DESCRIBE user;
 
-Deleting database : 
-
