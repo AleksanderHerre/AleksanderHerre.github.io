@@ -51,3 +51,4 @@ header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
 exit;
 
 ?>
+
