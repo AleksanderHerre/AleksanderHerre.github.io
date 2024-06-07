@@ -38,9 +38,9 @@ $(document).ready(function ($) {
             if (flipResult <= 0.5) {
                 $('#coin').addClass('heads');
                 setTimeout(function () {
-                    $('#result_coin').text('Det er heads');
+                    $('#result_coin').text('The result is heads');
                     headsCount++;
-                    console.log('Det er heads');
+                    console.log('The result is heads');
                 }, 3250); 
 
                 // Oppdater og vis tellinger med forsinkelse for synkronisering
@@ -50,9 +50,9 @@ $(document).ready(function ($) {
             } else {
                 $('#coin').addClass('tails');
                 setTimeout(function () {
-                    $('#result_coin').text('Det er tails');
+                    $('#result_coin').text('The result is tails');
                     tailsCount++;
-                    console.log('Det er tails');
+                    console.log('The result is tails');
                 }, 3250); 
 
                 // Oppdater og vis tellinger med forsinkelse for synkronisering
