@@ -142,7 +142,7 @@ body {
 }
 
 #falling-coin {
-    background-size: cover;
+    background-size: flex;
     position: fixed;
     top: 0;
     left: 0;
