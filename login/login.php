@@ -31,22 +31,6 @@ $uStmt->execute();
 $uResult = $uStmt->get_result();
 $user = $uResult->fetch_assoc();
 
-// Check if input matches database values
-if ($UserOrEmail !== $user['EmailAdress'] && $UserOrEmail !== $user['Username']) {
-    echo " Email or username does not match"; // Redirect or handle error
-    exit;
-}
-
-if ($LoginPassword !== $user['Password']) {
-    echo " Password does not match the user"; // Redirect or handle error
-    exit;
-}
-
-
-echo "4";
-
-$count=mysqli_num_rows($uResult);
-
     // If result matched $UserOrMail and $LoginPassword, table row must be 1 row
 if($count==1){
         // Register $UserOrMail, $LoginPassword and redirect to file "welcome.php"
