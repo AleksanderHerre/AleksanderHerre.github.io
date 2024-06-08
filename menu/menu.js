@@ -12,10 +12,3 @@ document.addEventListener("DOMContentLoaded", function () {
       includeHTML("../menu/menu.html", topBarContainer);
   }
 });
-
-// JavaScript function to trigger form submission
-
-function logout(event) {
-    event.preventDefault(); // Prevent the default link behavior
-    document.getElementById("logoutForm").submit();
-}
