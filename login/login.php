@@ -28,6 +28,12 @@ $LoginEmailOrUser = "SELECT EmailAdress, Username, Password FROM user WHERE Emai
 $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
+
+$LoginPasswords = "SELECT Password FROM user WHERE Password = ?";
+$uStmt = $conn->prepare($LoginPasswords);
+$uStmt->bind_param("s", $LoginPassword);
+$uStmt->execute();
+
 $uResult = $uStmt->get_result();
 $user = $uResult->fetch_assoc();
 
