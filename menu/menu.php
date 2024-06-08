@@ -15,6 +15,9 @@
         <a id="iconTa" href="../clicker/Clicker.html"><i class="fa fa-shopping-cart"></i></a>
         <a id="iconTa" href="../coin/coin.html"><i class="fa fa-gamepad"></i></a>
         <a id="iconTa" href="../menu/logout.php"><i id="signout" class="fa fa-sign-out"></i></a>
+        <form action="../menu/logout.php" method="post"> 
+            <input type="submit" value="Logout"> 
+          </form> 
     </div>
 </div>
 
