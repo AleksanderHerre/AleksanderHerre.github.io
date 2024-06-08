@@ -40,7 +40,7 @@ if ($LoginPassword !== $user['Password']) {
 }
 echo"2.4";
 // If result matched $UserOrMail and $LoginPassword, set session variables and redirect to mainpage.php
-$_SESSION["userID"] = $user['id'];
+$_SESSION["userID"] = $user['userID'];
 $_SESSION["UserOrMail"] = $UserOrEmail;
 echo"2.5";
 // Debug: Check if session variables are set
