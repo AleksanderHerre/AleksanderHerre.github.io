@@ -14,11 +14,7 @@
         <a id="iconTa" href="../timeplan/Timeplan-VG2.html"><i class="fa fa-calendar"></i></a>
         <a id="iconTa" href="../clicker/Clicker.html"><i class="fa fa-shopping-cart"></i></a>
         <a id="iconTa" href="../coin/coin.html"><i class="fa fa-gamepad"></i></a>
-        <!-- Link with icon -->
-        <form action="../logout.php" method="post">
-                <!-- Link with icon -->
-            <button type="submit" id="iconTa"><i id="signout" class="fa fa-sign-out"></i></button>
-        </form>
+        <a href="/menu/logout.php" id="iconTa"><i id="signout" class="fa fa-sign-out"></i></a>
     </div>
 </div>
 
