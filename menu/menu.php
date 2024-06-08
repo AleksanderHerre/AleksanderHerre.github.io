@@ -1,6 +1,3 @@
-<?php 
-
-?>
 
 <html>
 <link rel="stylesheet" href="/menu/menu.css">
@@ -17,7 +14,7 @@
         <a id="iconTa" href="../timeplan/Timeplan-VG2.html"><i class="fa fa-calendar"></i></a>
         <a id="iconTa" href="../clicker/Clicker.html"><i class="fa fa-shopping-cart"></i></a>
         <a id="iconTa" href="../coin/coin.html"><i class="fa fa-gamepad"></i></a>
-        <a id="iconTa" href="../index.html"><i id="signout" class="fa fa-sign-out"></i></a>
+        <a id="iconTa" href="../menu/logout.php"><i id="signout" class="fa fa-sign-out"></i></a>
     </div>
 </div>
 

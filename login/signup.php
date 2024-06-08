@@ -50,7 +50,7 @@ if ($UsernameResult->num_rows != 0 and $MailResult ->num_rows != 0){
 
 echo".";
 // Successful login
-header("Location: ../index.html"); // Redirect to LoginPage
+header("Location: ../index.php"); // Redirect to LoginPage
 exit;
 
 $conn->close();
