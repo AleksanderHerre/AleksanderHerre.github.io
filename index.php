@@ -1,3 +1,8 @@
+<?php 
+
+?>
+
+<html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,4 +72,5 @@
     <script src="login/login.js"></script>
     <script src="launch.json"></script>
 </body>
+</html>
 </html>
