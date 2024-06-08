@@ -1,5 +1,5 @@
 <?php
-session_start();    
+session_start();
 
 // Database connection details
 $database = "LoginSystem";
@@ -15,40 +15,42 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-echo "1";
-
 // Retrieve and sanitize user input
-$UserOrEmail = stripslashes($UserOrEmail);
-$LoginPassword = stripslashes($LoginPassword);
-$UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
-$LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
-echo "hei";
+$UserOrEmail = stripslashes($_POST['UserOrEmail']);
+$LoginPassword = stripslashes($_POST['LoginPassword']);
+$UserOrEmail = $conn->real_escape_string($UserOrEmail);
+$LoginPassword = $conn->real_escape_string($LoginPassword);
 
+// Prepare the SQL query
 $LoginEmailOrUser = "SELECT EmailAdress, Username, Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
-
-$LoginPasswords = "SELECT Password FROM user WHERE Password = ?";
-$uStmt = $conn->prepare($LoginPasswords);
-$uStmt->bind_param("s", $LoginPassword);
-$uStmt->execute();
-
 $uResult = $uStmt->get_result();
 $user = $uResult->fetch_assoc();
 
-    // If result matched $UserOrMail and $LoginPassword, table row must be 1 row
-if($count==1){
-        // Register $UserOrMail, $LoginPassword and redirect to file "welcome.php"
-    $_SESSION["UserOrMail"]=$UserOrEmail;
-    $_SESSION["LoginPassword"]=$LoginPassword;
-    // Successful login
-    header("Location: ../mainpage/mainpage.php"); // Redirect to mainpage.html
-}
-else  {
-    echo"Something went wrong!";
+// Check if user exists
+if (!$user) {
+    echo "Email or username does not match"; // Display error message
+    exit;
 }
 
+// Check if input matches database values
+if ($LoginPassword !== $user['Password']) {
+    echo "Password does not match the user"; // Display error message
+    exit;
+}
 
+// If result matched $UserOrMail and $LoginPassword, table row must be 1 row
+if ($uResult->num_rows == 1) {
+    // Register $UserOrMail, $LoginPassword and redirect to file "mainpage.php"
+    $_SESSION["UserOrMail"] = $UserOrEmail;
+    $_SESSION["LoginPassword"] = $LoginPassword;
+    header("Location: ../mainpage/mainpage.php"); // Redirect to mainpage.php
+    exit;
+} else {
+    echo "Something went wrong!";
+}
+
+$conn->close();
 ?>
-
