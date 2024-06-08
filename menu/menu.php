@@ -15,7 +15,7 @@
         <a id="iconTa" href="../clicker/Clicker.html"><i class="fa fa-shopping-cart"></i></a>
         <a id="iconTa" href="../coin/coin.html"><i class="fa fa-gamepad"></i></a>
         <form action="/menu/logout.php" method="post">
-            <button type="submit" id="iconTa"><i id="signout" class="fa fa-sign-out"></i></button>
+            <a type="submit" id="iconTa"><i id="signout" class="fa fa-sign-out"></i></a>
         </form>
     </div>
 </div>
