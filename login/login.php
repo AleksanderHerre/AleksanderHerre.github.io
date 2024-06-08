@@ -20,7 +20,7 @@ $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
 echo"2.1";
 // Prepare the SQL query
-$LoginEmailOrUser = "SELECT id, EmailAdress, Username, Password FROM user WHERE EmailAdress = ? OR Username = ?";
+$LoginEmailOrUser = "SELECT userID, EmailAdress, Username, Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
