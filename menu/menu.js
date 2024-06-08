@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // JavaScript function to trigger form submission
 
-function logout() {
+function logout(event) {
+    event.preventDefault(); // Prevent the default link behavior
     document.getElementById("logoutForm").submit();
 }
