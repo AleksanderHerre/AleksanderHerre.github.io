@@ -1,4 +1,4 @@
-<?php include '../login/connect.php';?>
+<?php include '../menu/connect.php';?>
 
 <html>
     <head>
