@@ -18,6 +18,8 @@ if ($conn->connect_error) {
 echo "1";
 
 // Retrieve and sanitize user input
+$UserOrEmail = stripslashes($UserOrEmail);
+$LoginPassword = stripslashes($LoginPassword);
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
 echo "hei";
@@ -44,11 +46,21 @@ if ($LoginPassword !== $user['Password']) {
 }
 
 echo "4";
- 
 
-// Successful login
-header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
-exit;
+$count=mysqli_num_rows($uResult);
+
+    // If result matched $UserOrMail and $LoginPassword, table row must be 1 row
+if($count==1){
+        // Register $UserOrMail, $LoginPassword and redirect to file "welcome.php"
+    $_SESSION["UserOrMail"]=$UserOrEmail;
+    $_SESSION["LoginPassword"]=$LoginPassword;
+    // Successful login
+    header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
+}
+else  {
+    echo"Something went wrong!";
+}
+
 
 ?>
 
