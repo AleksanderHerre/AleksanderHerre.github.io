@@ -13,3 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// JavaScript function to trigger form submission
+
+function logout() {
+    document.getElementById("logoutForm").submit();
+}
