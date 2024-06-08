@@ -3,9 +3,9 @@
 Hei her er informasjon om Login Systemet til mitt nettsted. 
 
 
-Table: User 
+Table: user 
 
-1. User ID 
-2. User 
+1. userID 
+2. Username 
 3. EmailAdress
 4. Password
