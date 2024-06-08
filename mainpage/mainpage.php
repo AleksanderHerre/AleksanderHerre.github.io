@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <title>Gand IT</title>
-    <link rel="stylesheet" href="../menu/menu.html">
+    <link rel="stylesheet" href="../menu/menu.php">
     <link rel="stylesheet" href="../mainpage/mainpage.php">
     <link rel="stylesheet" href="../menu/menu.css">
     <link rel="stylesheet" href="/mainpage/style.css">
