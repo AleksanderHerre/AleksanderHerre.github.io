@@ -55,7 +55,7 @@ if($count==1){
     $_SESSION["UserOrMail"]=$UserOrEmail;
     $_SESSION["LoginPassword"]=$LoginPassword;
     // Successful login
-    header("Location: ../mainpage/mainpage.html"); // Redirect to mainpage.html
+    header("Location: ../mainpage/mainpage.php"); // Redirect to mainpage.html
 }
 else  {
     echo"Something went wrong!";
