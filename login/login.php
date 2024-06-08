@@ -29,9 +29,6 @@ $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
 $uResult = $uStmt->get_result();
-
-echo "test";
-
 $user = $uResult->fetch_assoc();
 
 // Check if input matches database values
@@ -44,6 +41,7 @@ if ($LoginPassword !== $user['Password']) {
     echo " Password does not match the user"; // Redirect or handle error
     exit;
 }
+
 
 echo "4";
 
