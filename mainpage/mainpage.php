@@ -19,8 +19,8 @@ include '../menu/connect.php';
         <!-- Bakgrunns bilde -->
         <img id="img" class="banner" src="https://www.bm-t.no/wp-content/uploads/2021/11/gandvgs2.jpg" alt="">
         </div>
-        <h1 id="hei">
-            Hei, <?php ($_SESSION['Username']); ?> velkommen til mitt nettsted IT VG2 oppgave.
+        <h1 id="hei" class="hidden">
+            Hei, <?php ($_SESSION['username']); ?> velkommen til mitt nettsted IT VG2 oppgave.
         </h1>
     </main>
 
