@@ -1,6 +1,5 @@
 <?php 
 include '../menu/connect.php';
-include '../login/login.php';
 ?>
 
 <!DOCTYPE html>
