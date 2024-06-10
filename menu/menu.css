@@ -1,6 +1,14 @@
 
 /* TopBar stilen, plassering og utsene*/
 
+#topBarContainernnonPHP {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid black;
+    background-color: white;
+}
 
 #topBarContainer {
     position: fixed;

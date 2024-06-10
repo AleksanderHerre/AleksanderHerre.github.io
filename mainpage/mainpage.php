@@ -1,4 +1,6 @@
-<?php include '../menu/connect.php';?>
+<?php 
+include '../menu/connect.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +19,9 @@
         <!-- Bakgrunns bilde -->
         <img id="img" class="banner" src="https://www.bm-t.no/wp-content/uploads/2021/11/gandvgs2.jpg" alt="">
         </div>
-            <!-- Framside tekst -->
-            <h1 id="hei" class="hidden">Hei, velkommen til mitt nettsted IT VG2 oppgave.</h1>
+        <h1 id="hei" class="hidden">
+            Hei, <?php echo htmlspecialchars($_SESSION['username']); ?> velkommen til mitt nettsted IT VG2 oppgave.
+        </h1>
     </main>
 
     <script src="/mainpage/script.js"></script>
