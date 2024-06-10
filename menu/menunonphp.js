@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     };
   
-    const topBarContainer = document.getElementById("topBarContainer");
-    if (topBarContainer) {
-        includeHTML("../menu/menu.html", topBarContainer);
+    const topBarContainernnonPHP = document.getElementById("topBarContainernnonPHP");
+    if (topBarContainernnonPHP) {
+        includeHTML("../menu/menu.html", topBarContainernnonPHP);
     }
   });
-  
