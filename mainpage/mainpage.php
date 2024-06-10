@@ -20,7 +20,7 @@ include '../menu/connect.php';
         <img id="img" class="banner" src="https://www.bm-t.no/wp-content/uploads/2021/11/gandvgs2.jpg" alt="">
         </div>
         <h1 id="hei" class="hidden">
-            Hei, <?php echo htmlspecialchars($_SESSION['username']); ?> velkommen til mitt nettsted IT VG2 oppgave.
+            Hei, <?php echo htmlspecialchars($_SESSION['Username']); ?> velkommen til mitt nettsted IT VG2 oppgave.
         </h1>
     </main>
 
