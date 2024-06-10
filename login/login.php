@@ -20,7 +20,7 @@ $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
 echo"2.1";
 // Prepare the SQL query
-$LoginEmailOrUser = "SELECT userID, EmailAdress, Username, Password FROM user WHERE EmailAdress = ? OR Username = ?";
+$LoginEmailOrUser = "SELECT userID, EmailAdress, Username FROM user WHERE EmailAdress = ? OR Username = ?";
 $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
 $uStmt->execute();
@@ -33,10 +33,20 @@ if (!$user) {
     exit;
 }
 echo"2.3";
+$sql = "SELECT userId, password FROM user WHERE username = ?";
+$pstmt = $conn->prepare($sql);
+$pstmt->bind_param("s", $username);
+$pstmt->execute();
+$presult = $pstmt->get_result();
+
+
 // Verify password
-if ($LoginPassword !== $user['Password']) {
-    echo "Password does not match the user"; // Display error message
-    exit;
+$user = $result->fetch_assoc();
+if(!$user || !password_verify($password, $user['password'])){
+	echo "Wrong username or password";
+	$stmt->close();
+	$conn->close();
+	exit;
 }
 echo"2.4";
 // If result matched $UserOrMail and $LoginPassword, set session variables and redirect to mainpage.php
