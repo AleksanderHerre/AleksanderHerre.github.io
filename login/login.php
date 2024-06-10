@@ -34,16 +34,8 @@ if (!$user) {
 }
 echo"2.3";
 
-$LoginPasswords = "SELECT userID, EmailAdress, Username, Password FROM user WHERE Password = ?";
-$pStmt = $conn->prepare($LoginPasswords);
-$pStmt->bind_param("s", $LoginPassword);
-$pStmt->execute();
-$pResult = $pStmt->get_result();
-$pass = $pResult->fetch_assoc();
-echo"2.4.5";
-// Verify password
-if (!$pass) {
-    echo "Password does not match"; // Display error message
+if (!password_verify($LoginPassword, $user['Password'])) {
+    echo "Password does not match";
     exit;
 }
 echo"2.4";
