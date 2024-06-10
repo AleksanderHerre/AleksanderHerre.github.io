@@ -33,7 +33,7 @@ if (!$user) {
     exit;
 }
 echo"2.3";
-$sql = "SELECT userId, password FROM user WHERE username = ?";
+$sql = "SELECT userID, password FROM user WHERE username = ?";
 $pstmt = $conn->prepare($sql);
 $pstmt->bind_param("s", $username);
 $pstmt->execute();
