@@ -37,9 +37,9 @@ if ($UsernameResult->num_rows != 0 and $MailResult ->num_rows != 0){
 } elseif ($UsernameResult-> num_rows != 0)
 	die( "Dette brukernavnet er allerede i bruk") ;
  else {
-	$password_hashed = password_hash($password, PASSWORD_BCRYPT); 
+	$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
 	// Lager en SQL setning som settes inn som brukerdata i databasen 
-	$sql = "INSERT INTO user (EmailAdress, Username, Password) VALUES ('$mail', '$username', '$password_hashed');";
+	$sql = "INSERT INTO user (EmailAdress, Username, Password) VALUES ('$mail', '$username', '$passwordHashed');";
           
 	// Utfører SQL-setning  og gir tilbakemelding 
 	if ($conn->query($sql) === TRUE){
