@@ -40,12 +40,12 @@ $pStmt->bind_param("s", $LoginPassword);
 $pStmt->execute();
 $pResult = $pStmt->get_result();
 $pass = $pResult->fetch_assoc();
+echo"2.4.5";
 // Verify password
 if (!$pass) {
     echo "Password does not match"; // Display error message
     exit;
 }
-
 echo"2.4";
 // If result matched $UserOrMail and $LoginPassword, set session variables and redirect to mainpage.php
 $_SESSION["userID"] = $user['userID'];
