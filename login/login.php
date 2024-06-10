@@ -33,11 +33,19 @@ if (!$user) {
     exit;
 }
 echo"2.3";
+
+$LoginPasswords = "SELECT userID, EmailAdress, Username, Password FROM user WHERE Password = ?";
+$pStmt = $conn->prepare($LoginPasswords);
+$pStmt->bind_param("s", $LoginPassword);
+$pStmt->execute();
+$pResult = $pStmt->get_result();
+$pass = $pResult->fetch_assoc();
 // Verify password
-if ($LoginPassword !== $user['Password']) {
-    echo "Password does not match the user"; // Display error message
+if (!$pass) {
+    echo "Password does not match"; // Display error message
     exit;
 }
+
 echo"2.4";
 // If result matched $UserOrMail and $LoginPassword, set session variables and redirect to mainpage.php
 $_SESSION["userID"] = $user['userID'];
