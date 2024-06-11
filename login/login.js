@@ -30,45 +30,45 @@ document.addEventListener("DOMContentLoaded", () => {
     createAccountForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        const usernameInput = createAccountForm.querySelector("input[name='username']");
-        const passwordInput = createAccountForm.querySelector("input[name='password']");
-        const mailInput = createAccountForm.querySelector("input[name='mail']");
-        
-        const username = usernameInput.value;
-        const password = passwordInput.value;
+        const usernameInput = createAccountForm.querySelector("input[username]");
+        const mailInput = createAccountForm.querySelector("input[username]");
+        const passwordInput = createAccountForm.querySelector("input[username]");
+
+        const username = usernameInput.value; 
         const mail = mailInput.value;
+        const password = passwordInput.value; 
 
-        const usernamePattern = /^(?=.{3,})/;
-        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
+        const usernamePattern = /^(?=.*{3,0})/;
         const mailPattern = /^(?=.*[@.])/;
+        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
 
-        let isValid = true;
+        let isValid = true; 
 
-        if (!mailPattern.test(mail)) {
-            setInputError(mailInput, "Email skal inneholde @ og dot");
-            isValid = false; 
-        } else {
-            clearInputError(mailInput);
-        }
-
-        if (!usernamePattern.test(username)) {
-            setInputError(usernameInput, "Brukernavnet skal inneholde 3 eller flere karakterer.");
+        if(!passwordInput.test(password)) {
+            setInputError(passwordInput, "Passord skal være lenger en 7 karakterer, inne holde en stor bokstav og et spesiall tegn.")
             isValid = false;
         } else {
-            clearInputError(usernameInput);
+            clearInputError(passwordInput)
         }
 
-        if (!passwordPattern.test(password)) {
-            setInputError(passwordInput, "Passordet skal inneholde flere en 7 karakterer og skal inneholde minst en stor bokstav og spesiell karakter.");
+        if(!usernameInput.test(username)) {
+            setInputError(usernameInput, "Email skal inneholde @ og dot")
             isValid = false;
         } else {
-            clearInputError(passwordInput);
+            clearInputError(usernameInput)
         }
 
-        if (isValid) {
+        if(!usernameInput.test(username)) {
+            setInputError(usernameInput, "Bruker navn skal være lenger en 3 karakterer")
+            isValid = false;
+        } else {
+            clearInputError(usernameInput)
+        }
+
+        if(isValid) {
             createAccountForm.submit();
         }
-    });
+    })
 
     document.getElementById('LoginCheckPass').onclick = function() {
         const loginPasswordInput = document.getElementById('loginpassword');
