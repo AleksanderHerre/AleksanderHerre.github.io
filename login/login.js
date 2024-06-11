@@ -64,6 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createAccountForm.addEventListener("submit", e => {
         e.preventDefault();
+        const usernameInput = createAccountForm.querySelector("input[name='username']");
+        const username = usernameInput.value;
+
+        const usernamePattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
+        if (!usernamePattern.test(username)) {
+            setInputError(usernameInput, "Username skal inneholde flere en 7 karakterer og skal inneholde minst en stor bokstav og spesiell karakter.");
+        } else {
+            createAccountForm.submit();
+        }
+    });
+
+    createAccountForm.addEventListener("submit", e => {
+        e.preventDefault();
         const passwordInput = createAccountForm.querySelector("input[name='password']");
         const password = passwordInput.value;
 
@@ -74,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             createAccountForm.submit();
         }
     });
+
     
     document.getElementById('LoginCheckPass').onclick = function() {
         if (this.checked) { 
