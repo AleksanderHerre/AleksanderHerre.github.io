@@ -27,49 +27,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    
+
     createAccountForm.addEventListener("submit", e => {
         e.preventDefault();
         
-        const usernameInput = createAccountForm.querySelector("input[name='username']");
-        const passwordInput = createAccountForm.querySelector("input[name='password']");
-        const mailInput = createAccountForm.querySelector("input[name='mail']");
+        const passwordInput = createAccountForm.querySelector("input[password]");
 
-        const username = usernameInput.value;
-        const password = passwordInput.value;
-        const mail = mailInput.value;
+        const password = passwordInput.value 
 
-        const usernamePattern = /^(?=.{3,})/;
-        const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
-        const mailPattern = /^(?=.*[@.])/;
+        const passwordPattern = /^(?.*[@!#%¤&/^])(?.*[A-Z])(?.*{7,})/
 
-        let isValid = true;
-
-        if (!mailPattern.test(mail)) {
-            setInputError(mailInput, "Email skal inneholde @ og dot");
-            isValid = false; 
-        } else {
-            clearInputError(mailInput);
-        }
-
-        if (!usernamePattern.test(username)) {
-            setInputError(usernameInput, "Brukernavnet skal inneholde 3 eller flere karakterer.");
-            isValid = false;
-        } else {
-            clearInputError(usernameInput);
-        }
+        let isValid = True 
 
         if (!passwordPattern.test(password)) {
-            setInputError(passwordInput, "Passordet skal inneholde flere en 7 karakterer og skal inneholde minst en stor bokstav og spesiell karakter.");
-            isValid = false;
+            setInputError(passwordInput = "Passord må inneholde spesiell karakter, mer en 7 karakterer og minst en stor bokstav.");
+            isValid = false; 
         } else {
             clearInputError(passwordInput);
         }
 
-        if (isValid) {
+        if (isValid){
             createAccountForm.submit();
         }
-    });
+
 
     document.getElementById('LoginCheckPass').onclick = function() {
         const loginPasswordInput = document.getElementById('loginpassword');
