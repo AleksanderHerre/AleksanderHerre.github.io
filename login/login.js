@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isValid) {
             createAccountForm.submit();
         }
-    })
+    });
 
     document.getElementById('LoginCheckPass').onclick = function() {
         const loginPasswordInput = document.getElementById('loginpassword');
