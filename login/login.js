@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let isValid = true;
 
         if (!usernamePattern.test(username)) {
-            setInputError(usernameInput, "Username skal inneholde flere en 7 karakterer og skal inneholde minst en stor bokstav og spesiell karakter.");
+            setInputError(usernameInput, "Username skal inneholde flere en 3 karakterer og skal inneholde minst en stor bokstav og spesiell karakter.");
             isValid = false;
         } else {
             clearInputError(usernameInput);
