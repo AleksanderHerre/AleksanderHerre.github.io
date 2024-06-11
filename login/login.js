@@ -34,20 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form--hidden");
     });
 
-    document.querySelectorAll(".form__input").forEach(inputElement => {
-        inputElement.addEventListener("blur", e => {
-		// Denne delen av koden advarer deg mot og ha  mindre en 3 karakterer i brukernavnet ditt
-            if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 3) {
-                setInputError(inputElement, "Username should be more than 3 characters in length");
-            }
-        });
-
-        inputElement.addEventListener("input", e => {
-            clearInputError(inputElement);
-        });
-    
-    });
-
     document.addEventListener("DOMContentLoaded", () => {
         const createAccountForm = document.querySelector("#createAccount");
     
