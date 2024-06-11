@@ -14,7 +14,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
-
+echo"hei";
 // Retrieve and sanitize user input
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);

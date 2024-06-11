@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let isValid = true;
 
         if (!mailPattern.test(mail)) {
-            setInputError(mailInput, "Email skal inneholde @ og .");
+            setInputError(mailInput, "Email skal inneholde @ og dot");
             isValid = false; 
         } else {
             clearInputError(mailInput);
