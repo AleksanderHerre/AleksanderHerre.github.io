@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const mailPattern = /^(?=.*[@.])/;
 
         let isValid = true; 
-        // patterns
+        
         if (!mailPattern.test(mail)) {
             setInputError(mailInput, "Email skal inneholde @ og dot");
             isValid = false; 
