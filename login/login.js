@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const username = usernameInput.value;
         const password = passwordInput.value;
 
-        const usernamePattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
+        const usernamePattern = /^(?=.{3,})/;
         const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
 
         let isValid = true;
