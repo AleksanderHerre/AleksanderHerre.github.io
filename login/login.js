@@ -30,15 +30,34 @@ document.addEventListener("DOMContentLoaded", () => {
     createAccountForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        const usernameInput = createAccountForm.querySelector("input[name='username']");
+        const usernameInput = createAccountForm.querySelector("input[username]");
+
+        const username = usernameInput.value; 
+
+        const usernamePattern = /^(?.*{3,})/;
+
+        let isValid = true; 
+
+        if(!usernamePattern.test(mail)) {
+            setInputError(usernameInput, "Bruker navn må være 3 karakterer eller mindre.");
+            isValid = false;
+        }   else {
+            clearInputError(usernameInput)
+        }
+        if (isValid) {
+            createAccountForm.submit();
+        }
+    })
+     
+    createAccountForm.addEventListener("submit", e => {
+        e.preventDefault();
+
         const passwordInput = createAccountForm.querySelector("input[name='password']");
         const mailInput = createAccountForm.querySelector("input[name='mail']");
 
-        const username = usernameInput.value;
         const password = passwordInput.value;
         const mail = mailInput.value;
 
-        const usernamePattern = /^(?=.{3,})/;
         const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
         const mailPattern = /^(?=.*[@.])/;
 
@@ -49,13 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false; 
         } else {
             clearInputError(mailInput);
-        }
-
-        if (!usernamePattern.test(username)) {
-            setInputError(usernameInput, "Brukernavnet skal inneholde 3 eller flere karakterer.");
-            isValid = false;
-        } else {
-            clearInputError(usernameInput);
         }
 
         if (!passwordPattern.test(password)) {
