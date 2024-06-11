@@ -18,7 +18,7 @@ I dette prosjektet har jeg brukt tre språk HTML, CSS og JavaScript tre hovudsak
 
 # Tid
 
-Jeg har brukt mye tid på og lese funksjoner og språk jeg ikke helt har forståt i fortid, sånt som jeg leste meg litt opp på JavaScript også letet jeg etter nye funksjoner i CSS. Html kunne jeg ifra før av så ble ikke mye av det, og er ikke så mye innhold i det. Der det ligger mest innhold er koden seg selv, HTML er egentligt bare oppsettet også er JavaScript og CSS det som holder det sammer og får ting til og gjøre ting. 
+Jeg har brukt mye tid på og lese funksjoner og språk jeg ikke helt har forståt i fortid, sånt som jeg leste meg litt opp på PHP, JS også letet jeg etter nye funksjoner i CSS. Html kunne jeg ifra før av så ble ikke mye av det, og er ikke så mye innhold i det. Der det ligger mest innhold er koden seg selv, HTML er egentligt bare oppsettet også er JavaScript og CSS det som holder det sammer og får ting til og gjøre ting. Det som det har gått mest tid på er SQL og PHP
 
 Jeg har også brukt tid på og lage en server som hoster nettsiden på Gand Vidergående Skole (2ITB) sitt nettverk. Jeg lagte en Ubuntu server i ProxMox og brukte apache2 inne i Ubuntu serveren til og hoste nettsiden på vell nettet. 
 
