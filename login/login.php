@@ -1,25 +1,25 @@
 <?php
 session_start();
 
-// Database connection details
+// Database detaljer
 $database = "LoginSystem";
 $servername = "localhost";
 $username = "bruker12";
 $password = "passord";
 
-// Connect to the database
+// Kobler til database
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Check the connection
+// Sjekker kobling
 if ($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
 echo"hei";
-// Retrieve and sanitize user input
+// Får tak i inputs
 $UserOrEmail = $conn->real_escape_string($_POST['UserOrEmail']);
 $LoginPassword = $conn->real_escape_string($_POST['LoginPassword']);
 echo"2.1";
-// Prepare the SQL query
+// Gjør klar SQL_query
 $LoginEmailOrUser = "SELECT userID, EmailAdress, Username, Password FROM user WHERE EmailAdress = ? OR Username = ?";
 $uStmt = $conn->prepare($LoginEmailOrUser);
 $uStmt->bind_param("ss", $UserOrEmail, $UserOrEmail);
@@ -27,9 +27,9 @@ $uStmt->execute();
 $uResult = $uStmt->get_result();
 $user = $uResult->fetch_assoc();
 echo"2.2";
-// Check if user exists
+// Ser om bruker allerede eksiterer. 
 if (!$user) {
-    echo "Email or username does not match"; // Display error message
+    echo "Email or username does not match"; // Erro melding
     exit;
 }
 echo"2.3";
@@ -39,7 +39,7 @@ if (!password_verify($LoginPassword, $user['Password'])) {
     exit;
 }
 echo"2.4";
-// If result matched $UserOrMail and $LoginPassword, set session variables and redirect to mainpage.php
+// Hvis resultat passer $UserOrMail og $LoginPassword, skru på SESSION variabler og send til mainpage.php
 $_SESSION["userID"] = $user['userID'];
 $_SESSION["UserOrMail"] = $UserOrEmail;
 $_SESSION["username"] = $user['Username'];
@@ -52,7 +52,7 @@ if (isset($_SESSION["userID"])) {
     exit;
 }
 echo"2.6";
-header("Location: ../mainpage/mainpage.php"); // Redirect to mainpage.php
+header("Location: ../mainpage/mainpage.php"); // Hvis alt funker send til Mainpage.php
 exit;
 
 $conn->close();

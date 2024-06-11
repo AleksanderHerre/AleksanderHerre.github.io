@@ -48,10 +48,10 @@ else {
 		echo "error:" . $sql. "<br>" .$conn->error;
 	}
 }
-
+echo".";
 echo".";
 // Successful login
-header("Location: ../index.html"); // Redirect to LoginPage
+header("Location: ../index.html"); // Sender deg til index.html
 exit;
 
 $conn->close();
